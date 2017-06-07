@@ -254,14 +254,30 @@ are modified based on the flip.
 
 ## Evaluation
 
-Evaluating performance of model using standard metric in computer vision.
+Evaluating performance of models using standard metric in computer vision.
 
 * Semantic Segmentation: IoU
 * Object Detection: Average Precision
 
-<!--These functions are used in evaluation code such as `examples/detection/eval_voc07.py`.-->
+#### `chainer.training.Extension` for evaluation
 
----
+```python
+# trainer is a chainer.training.Trainer object
+trainer.extend(
+    chainercv.extension.DetectionVOCEvaluator(iterator, detection_model),
+    trigger=(1, 'epoch'))
+```
+ 
+```python
+evaluator = chainercv.extension.DetectionVOCEvaluator(
+        iterator, detection_model)
+# `result` contains dictionary of evaluation results
+# ex:  result['main/map'] contains mAP
+result = evaluator()
+```
+
+
+<!--
 
 ## `chainer.training.Extension` for evaluation
 
@@ -286,6 +302,7 @@ Internally, the evaluator runs three operations:
 2. Pass iterables of predictions and ground truth to `eval_*`.
 3. Report results.
 
+-->
 
 ---
 
