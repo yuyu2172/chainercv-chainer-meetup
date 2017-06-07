@@ -11,3 +11,10 @@ python -m http.server
 
 # go to localhost:8000
 ```
+
+
+### Hosted page
+
+(This may not be updated to the newest version)
+
+https://yuyu2172.github.io/chainercv-chainer-meetup
