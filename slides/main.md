@@ -31,7 +31,7 @@ layout: false
 ---
 
 ## Goal of ChainerCV
-#### Make *running* and *training* neural networks easier in CV
+#### Make *running* and *training* deep-learning easier in Computer Vision
 
 <!--
 * Network implementations and training scripts
@@ -43,7 +43,9 @@ layout: false
 * Evaluation
 -->
 
-.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]
+<!--.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]-->
+
+.center.img[![](images/example_outputs_first_page.png)]
 
 ---
 
@@ -64,6 +66,7 @@ layout: false
 1. Run-time prototyping
 2. Tools for Training Networks
 3. Efforts on Reproducible Research
+4. Comparison and Conclusions
 
 ---
 
@@ -87,7 +90,7 @@ template: inverse
 ---
 
 
-## Unified Interface for Models
+## Unified interface for models
 
 In ChainerCV, using a trained model is as easy as follows.
 
@@ -112,7 +115,7 @@ labels = model.predict(imgs)
 
 ---
 
-## `predict` for Detection models
+## `predict` for detection models
 
 
 
@@ -126,7 +129,7 @@ Internally, `predict` does ...
 
 ---
 
-## Potential Applications
+## Potential applications
 
 #### As a building block for other networks
 
@@ -144,7 +147,7 @@ template: inverse
 
 ---
 
-## Components for training a network
+## Network training components
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -154,10 +157,9 @@ template: inverse
 
 .center.img[![a](images/software_comp.png)]
 
-
 ---
 
-## Components for training a network
+## Network training components
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -169,14 +171,14 @@ template: inverse
 
 ---
 
-## Dataset Loader
+## Dataset loader
 
 Similar to dataset loaders in `chainer.datasets` (e.g. MNIST)
 
 ```python
 from chainercv.datasets import VOCDetectionDataset
 
-dataset = VOCDetectionDataset(split='trainval', year='2007')
+*dataset = VOCDetectionDataset(split='trainval', year='2007')
 # Access 34th sample in the dataset
 img, bbox, label = dataset[34]
 ```
@@ -246,7 +248,7 @@ are modified based on the flip.
 
 * Code is built on top of Matplotlib
 
-.img[![sample_visualization](images/sample_visualization.png)]
+.img[![sample_visualization](images/vis_visualization.png)]
 
 ---
 
@@ -326,7 +328,7 @@ plot.show()
 
 
 
-## "Bad" implementations *in the wild*
+## Bad implementations *in the wild*
 
 Many reimplementations of algorithms on the internet have problems.
 
@@ -337,7 +339,7 @@ Many reimplementations of algorithms on the internet have problems.
 
 ---
 
-## ChainerCV's for reproducible research
+## ChainerCV for reproducible research
 
 - Reproduce performance on par with the ones reported in the original papers.
 - Document changes made from the original implementation.
