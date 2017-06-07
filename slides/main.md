@@ -21,7 +21,7 @@ layout: false
 ## ChainerCV
 
 <!--.center.img-50[![chainercv screenshot](images/chainercv/screenshot_large.png)]-->
-.center.img[![chainercv screenshot](images/chainercv/screenshot.png)]
+.center.img[![chainercv screenshot](images/screenshot.png)]
 
 * An add-on package built on top of Chainer for computer vision 
 * Github page:  [https://github.com/chainer/chainercv](https://github.com/chainer/chainercv)
@@ -43,7 +43,7 @@ layout: false
 * Evaluation
 -->
 
-.center.img-33[![Right-algined text](images/chainercv/faster_rcnn_image_000008.png)]
+.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]
 
 ---
 
@@ -51,10 +51,10 @@ layout: false
 
 ## ChainerCV Contributors
 
-* Yusuke Niitani ([yuyu2172](https://github.com/yuyu2172))
-* Toru Ogawa ([hakuyume](https://github.com/hakuyume))
-* Shunta Saito ([mitmul](https://github.com/mitmul))
-* Masaki Saito ([rezoo](https://github.com/rezoo))
+* Yusuke Niitani ([@yuyu2172](https://github.com/yuyu2172))
+* Toru Ogawa ([@hakuyume](https://github.com/hakuyume))
+* Shunta Saito ([@mitmul](https://github.com/mitmul))
+* Masaki Saito ([@rezoo](https://github.com/rezoo))
 * and more...
 
 ---
@@ -119,7 +119,7 @@ Internally, `predict` does ...
 2. Forward the images through the network
 3. Post-processing outputs by removing overlapping boxes
 
-.center.img-75[![](images/chainercv/predict_doc.png)]
+.center.img-75[![](images/predict_doc.png)]
 
 
 ---
@@ -128,11 +128,11 @@ Internally, `predict` does ...
 
 #### As a building block for other networks
 
-For example, Scene graph generation depends
+For example, scene graph generation depends
 on object detection algorithms to localize objects in images.
 
 
-.center.img-75[![](images/chainercv/scene_graph.png)]
+.center.img-75[![](images/scene_graph.png)]
 
 ---
 
@@ -150,7 +150,7 @@ template: inverse
 
 <!-- Add a slide on how learning a machine software components -->
 
-.center.img[![a](images/chainercv/software_comp.png)]
+.center.img[![a](images/software_comp.png)]
 
 
 ---
@@ -163,7 +163,7 @@ template: inverse
 
 <!-- Add a slide on how learning a machine software components -->
 
-.center.img[![a](images/chainercv/software_comp_thick.png)]
+.center.img[![a](images/software_comp_thick.png)]
 
 ---
 
@@ -201,7 +201,7 @@ A function that takes an image and annotations as inputs and applies a modificat
     * etc...
 * Transforms for annotations such as bounding boxes and keypoints
 
-.center.img-50[![random_expand](images/chainercv/mnist_random_expand.png)]
+.center.img-50[![random_expand](images/mnist_random_expand.png)]
 
 ---
 
@@ -241,7 +241,7 @@ are modified based on the flip.
 
 * Code is built on top of Matplotlib
 
-.img[![sample_visualization](images/chainercv/sample_visualization.png)]
+.img[![sample_visualization](images/sample_visualization.png)]
 
 ---
 
