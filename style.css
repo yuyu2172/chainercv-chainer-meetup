@@ -40,9 +40,6 @@ h1, h2, h3 {
 }
 
 
-.below {
-  margin: 60px 0 0 0;
-}
 
 .emph {
   font-style: italic;
@@ -132,6 +129,12 @@ ol li > p, ul li > p {
 .remark-slide-content .img-30 img { width: 30%; }
 .remark-slide-content .img-25 img { width: 25%; }
 .remark-slide-content .img-20 img { width: 20%; }
+
+.below-60 {margin: 60px 0 0 0;}
+.below-80 {margin: 80px 0 0 0;}
+.below-100 {margin: 100px 0 0 0;}
+.below-120 {margin: 120px 0 0 0;}
+.below-200 {margin: 200px 0 0 0;}
 
 a, a:visited {
   color: #428bca;

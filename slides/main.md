@@ -45,7 +45,7 @@ layout: false
 
 <!--.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]-->
 
-.center.img[![](images/example_outputs_first_page.png)]
+.center.img[![](images/example_outputs_first_page_1.png)]
 
 ---
 
@@ -79,13 +79,13 @@ template: inverse
 ## Using other people's implementation is hard
 
 * Interface is not so clear (e.g. How to run with my data?)
-* Installation does not work in your environment.
-* Different implementations have different conventions.
-* Research code is dirty.
+* Installation failure (e.g. Unmaintained Caffe)
+<!--* Different implementations have different conventions.-->
+<!--* Research code is dirty.-->
 
 --
 
-.below[.center[
+.below-60[.center[
 **ChainerCV aims at solving these issues**]]
 
 1. Easy installation (`pip`)
@@ -99,24 +99,22 @@ template: inverse
 
 ## Unified interface for models
 
-In ChainerCV, using a trained model is as easy as follows.
 
-
-#### Faster R-CNN
+#### Object instantiation
 ```python
-model = FasterRCNNVGG16(pretrained_model='voc07')
+FasterRCNNVGG16(pretrained_model='voc07')
+SSD300(pretrained_model='voc0712')
+SegNet(pretrained_model='camvid')
+```
+
+#### Prediction interface
+```python
+# Detection models
 bboxes, labels, scores = model.predict(imgs)
 ```
 
-#### SSD
 ```python
-model = SSD300(pretrained_model='voc0712')
-bboxes, labels, scores = model.predict(imgs)
-```
-
-#### SegNet
-```python
-model = SegNet(pretrained_model='camvid')
+# Semantic Segmentation models
 labels = model.predict(imgs)
 ```
 
@@ -146,6 +144,8 @@ on object detection algorithms to localize objects in images.
 
 .center.img-75[![](images/scene_graph.png)]
 
+.small[Scene Graph Generation by Iterative Message Passing. Xu et.al., CVPR2017] 
+
 ---
 
 template: inverse
@@ -154,7 +154,7 @@ template: inverse
 
 ---
 
-## Network training components
+## Overview of training a neural network
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -166,7 +166,7 @@ template: inverse
 
 ---
 
-## Network training components
+## Overview of training neural networks
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -225,12 +225,7 @@ A function that takes an image and annotations as inputs and applies a modificat
 * This puts together datasets and transforms.
 
 ```python
-from chainercv.datasets import VOCDetectionDataset
-from chainer.datasets import TransformDataset
-from chainercv.transforms import random_flip, flip_bbox
-
-dataset = VOCDetectionDataset()
-
+# `dataset` is a dataset for Detection task
 def flip_transform(in_data):
     img, bbox, label = in_data
     img, param = random_flip(img, x_flip=True, return_param=True)
@@ -356,9 +351,9 @@ plot.show()
 
 - Trains and evaluates on datasets different from the original paper.
 - Undocumented changes from the original implementation.
-- Performing X% lower for undocumented reasons and bugs.
 
 This is problemetic for developing and comparing new ideas to the existing ones.
+
 
 
 
