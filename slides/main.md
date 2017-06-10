@@ -12,7 +12,7 @@ class: titlepage, no-number
 ### .small[.white[Jun 10th, 2017]]
 <!-- <br/> .green[Initial Version: June 18th, 2016]]-->
 
-### .x-small[https://github.com/chainer/chainercv]
+### .x-small[https://yuyu2172.github.io/chainercv-chainer-meetup]
 
 
 ---
@@ -20,13 +20,13 @@ layout: false
 
 ## ChainerCV
 
-<!--.center.img-50[![chainercv screenshot](images/chainercv/screenshot_large.png)]-->
 .center.img[![chainercv screenshot](images/screenshot.png)]
 
 * An add-on package built on top of Chainer for computer vision 
 * Github page:  [https://github.com/chainer/chainercv](https://github.com/chainer/chainercv)
-* Works with `chainer>=2.0.0`
+* Works with `chainer>=2.0.0` (also works for Chainer v1)
 * MIT License
+* Developed since late February 2017
 
 ---
 
@@ -63,7 +63,7 @@ layout: false
 
 ## Outline of the talk
 
-1. Run-time prototyping
+1. Easy-to-use Implementation
 2. Tools for Training Networks
 3. Efforts on Reproducible Research
 4. Comparison and Conclusions
@@ -72,18 +72,25 @@ layout: false
 
 template: inverse
 
-# Run-time prototyping
+# Easy-to-use Implementation
 
 ---
 
 ## Using other people's implementation is hard
 
-* Interface is not so clear
-* Installation does not work in your environment
-* Different implementations have different conventions
+* Interface is not so clear (e.g. How to run with my data?)
+* Installation does not work in your environment.
+* Different implementations have different conventions.
+* Research code is dirty.
 
-.center[
-**ChainerCV aims at solving these issues**]
+--
+
+.below[.center[
+**ChainerCV aims at solving these issues**]]
+
+1. Easy installation (`pip`)
+2. Tested and documented like Chainer
+3. Unified interface (next slide)
 
 <!-- because their instructions are unclear -->
 
@@ -347,11 +354,14 @@ plot.show()
 
 ## Bad implementations *in the wild*
 
-Many reimplementations of algorithms on the internet have problems.
-
 - Trains and evaluates on datasets different from the original paper.
 - Undocumented changes from the original implementation.
 - Performing X% lower for undocumented reasons and bugs.
+
+This is problemetic for developing and comparing new ideas to the existing ones.
+
+
+
 
 
 ---
@@ -363,8 +373,6 @@ Many reimplementations of algorithms on the internet have problems.
 
 
 #### Faster R-CNN
-
-<!--.img[![](images/faster_rcnn_performance.png)]-->
 
 | Training Setting | Evaluation | Reference | ChainerCV |
 |:-:|:-:|:-:|:-:|

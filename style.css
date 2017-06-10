@@ -40,6 +40,9 @@ h1, h2, h3 {
 }
 
 
+.below {
+  margin: 60px 0 0 0;
+}
 
 .emph {
   font-style: italic;
