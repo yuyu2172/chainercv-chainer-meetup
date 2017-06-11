@@ -45,7 +45,7 @@ layout: false
 
 <!--.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]-->
 
-.center.img[![](images/example_outputs_first_page_1.png)]
+.center.img-90[![](images/example_outputs_first_page_1.png)]
 
 ---
 
