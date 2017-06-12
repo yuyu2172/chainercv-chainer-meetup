@@ -18,6 +18,16 @@ class: titlepage, no-number
 ---
 layout: false
 
+## Chainer
+
+.center.img[![](images/chainer_home_page.png)]
+
++ A deep learning framework
++ Python based
++ Very simple installation
+
+---
+
 ## ChainerCV
 
 .center.img[![chainercv screenshot](images/screenshot.png)]
@@ -61,12 +71,22 @@ layout: false
 
 ---
 
+## Chainer Meetup held on June 10th
+
+.center.img-90[![](images/chainer_meetup_05.png)]
+
+I talked for 20 minutes.
+
+
+---
+
 ## Outline of the talk
 
 1. Easy-to-use Implementation
-2. Tools for Training Networks
-3. Efforts on Reproducible Research
-4. Comparison and Conclusions
+2. Quick-start
+3. Tools for Training Networks
+4. Efforts on Reproducible Research
+5. Comparison and Conclusions
 
 ---
 
@@ -145,6 +165,75 @@ on object detection algorithms to localize objects in images.
 .center.img-75[![](images/scene_graph.png)]
 
 .small[Scene Graph Generation by Iterative Message Passing. Xu et.al., CVPR2017] 
+
+---
+
+## Robotics
+
++ A ChainerCV model can be treated as a black-box.
++ State of the art models particularly suited for robotics-application (fast and accurate).
+
+.center.img[![](images/ssd.png)]
+
+SSD is much faster than Faster-RCNN and YOLO (VGG16).
+
+
+
+
+---
+
+template: inverse
+
+# Quick Start
+
+---
+
+## Running a demo
+
+Install ChainerCV
+
+```shell
+pip install Cython
+pip install matplotlib
+pip install chainercv
+```
+
+Run demo
+
+```shell
+cd examples/ssd
+python demo.py <image>.jpg
+```
+
+.center.img-60[![](images/demo.png)]
+
+
+---
+
+## Training on your own dataset
+
+```python
+def main(): 
+    ...
+
+*   train_data = VOCDetectionDataset(split='trainval', year='2007')
+*   test_data = VOCDetectionDataset(split='test', year='2007',
+*                                   use_difficult=True, return_difficult=True)
+    faster_rcnn = FasterRCNNVGG16(n_fg_class=len(voc_detection_label_names),
+                                  pretrained_model='imagenet')
+    faster_rcnn.use_preset('evaluate')
+    model = FasterRCNNTrainChain(faster_rcnn)
+    if args.gpu >= 0:
+        model.to_gpu(args.gpu)
+        chainer.cuda.get_device(args.gpu).use()
+    optimizer = chainer.optimizers.MomentumSGD(lr=args.lr, momentum=0.9)
+    optimizer.setup(model)
+    optimizer.add_hook(chainer.optimizer.WeightDecay(rate=0.0005))
+
+```
+
++ The training code for Faster R-CNN.
++ Change dataset loader class for your own dataset.
 
 ---
 
