@@ -6,7 +6,7 @@ layout: true
 
 class: titlepage, no-number
 
-# ChainerCV: a Library for Deep Learning in Computer Vision
+# ChainerCV: Library for Deep Learning in Computer Vision
 
 ## .author[Yusuke Niitani (UTokyo)]
 ### .small[.white[Jun 10th, 2017]]
@@ -22,16 +22,15 @@ layout: false
 
 .center.img[![chainercv screenshot](images/screenshot.png)]
 
-* An add-on package built on top of Chainer for computer vision 
+* Add-on package for CV built on top of Chainer
 * Github page:  [https://github.com/chainer/chainercv](https://github.com/chainer/chainercv)
-* Works with `chainer>=2.0.0` (also works for Chainer v1)
 * MIT License
 * Developed since late February 2017
 
 ---
 
 ## Goal of ChainerCV
-#### Make *running* and *training* deep-learning easier in Computer Vision
+#### Make *running* and *training* deep-learning easier in CV
 
 <!--
 * Network implementations and training scripts
@@ -438,9 +437,6 @@ We have talked about the goals of ChainerCV and its solutions.
 name: last-page
 class: center, middle, no-number
 
-## Thank You!
-<!--#### [@yuyu2172][Yusuke]-->
 
-.footnote[Slideshow created using [remark](http://github.com/gnab/remark).]
 
 <!-- vim: set ft=pandoc -->
