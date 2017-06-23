@@ -288,24 +288,32 @@ template: inverse
 
 ## Bad implementations *in the wild*
 
-- Trains and evaluates on datasets different from the original paper.
-- Undocumented changes from the original implementation.
+- Different datasets from original paper for eval/train
+- Undocumented changes from original paper
+- Failure to implement features in original paper
 
-This is problemetic for developing and comparing new ideas to the existing ones.
+
+#### When is this problemetic?
+
+- Analyzing Error
+- Extending from the existing method
+
+.center.img-33[![a](tikz/circle.png)]
+
 
 ---
 
 ## ChainerCV for reproducible research
 
-- Reproduce performance on par with the ones reported in the original papers.
-- Document changes made from the original implementation.
+- Reproduce performance on par with the original scores
+- Document changes made from the original implementation
 
 
 #### Faster R-CNN
 
-| Training Setting | Evaluation | Reference | ChainerCV |
+| Training Setting | Evaluation | Reference | ChainerCV | pytorch |
 |:-:|:-:|:-:|:-:|
-| VOC 2007 trainval | VOC 2007 test|  69.9 mAP  | **70.5 mAP** |
+| VOC 2007 trainval | VOC 2007 test|  69.9 mAP  | **70.5 mAP** | 66.1 mAP |
 
 
 #### SegNet
