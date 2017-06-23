@@ -56,14 +56,6 @@ layout: false
 
 .center.img-90[![](images/example_outputs_first_page_1.png)]
 
----
-
-## Outline of the talk
-
-1. Easy-to-use Implementation
-2. Tools for Training Networks
-3. Efforts on Reproducible Research
-4. Comparison and Conclusions
 
 ---
 
@@ -121,7 +113,7 @@ labels = model.predict(imgs)
 
 Internally, `predict` does ...
 1. Preprocess images (e.g. mean subtraction and resizing)
-2. Forward the images through the network
+2. Forward images through network
 3. Post-processing outputs by removing overlapping boxes
 
 .center.img-75[![](images/predict_doc.png)]
@@ -137,7 +129,7 @@ class: split-40
 
 + Example: scene graph generation
   + Algorithms depends on detection algorithms
-  + Research community focuses on how to use detection results
+  + Research community focuses on "using" detection results
   + Detection model can be black-box
 
 
@@ -151,7 +143,7 @@ class: split-40
 
 template: inverse
 
-# Efforts on Reproducible Research
+# Efforts on Reproducible Performance
 
 ---
 
@@ -174,7 +166,7 @@ template: inverse
 
 ## ChainerCV for reproducible research
 
-- Reproduce performance on par with the original scores
+- Reproduce scores on par with the original scores
 - Document changes made from the original implementation
 
 
@@ -195,27 +187,6 @@ template: inverse
 
 ---
 
-template: inverse
-
-# Comparison and Conclusions
-
----
-
-## Comparison of deep learning libraries in Computer Vision
-
-|   | ChainerCV *  | pytorch/vision     |
-|---|---|---|---|
-| **Backend** | Chainer | PyTorch |
-| **Supported Models** | Classification, detection and semantic segmentation  | Classification models |
-| **# of Transforms** | 17  | 11 |
-| **Visualization** | .blue[Y]  | .red[N] |
-| **Evaluation** | .blue[Y] | .red[N] |
-
-*Combination of ChainerCV and vision related functionalities in Chainer.
-
-This comparison is valid as of June 10th, 2017.
-
----
 
 <!-- Add a demo if you want to at the first chapter
 
@@ -236,7 +207,7 @@ See also: [Debug TensorFlow Models with tfdbg (@Google Developers Blog)](https:/
 -->
 
 
-## Concluding Remarks
+## Conclusions
 
 We have talked about the goals of ChainerCV and its solutions.
 
