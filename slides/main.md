@@ -29,7 +29,17 @@ layout: false
 
 ---
 
-## Goal of ChainerCV
+## ChainerCV Contributors
+
+* Yusuke Niitani ([@yuyu2172](https://github.com/yuyu2172))
+* Toru Ogawa ([@hakuyume](https://github.com/hakuyume))
+* Shunta Saito ([@mitmul](https://github.com/mitmul))
+* Masaki Saito ([@rezoo](https://github.com/rezoo))
+* and more...
+
+---
+
+## Why do we develop ChainerCV
 #### Make *running* and *training* deep-learning easier in CV
 
 <!--
@@ -48,18 +58,6 @@ layout: false
 
 ---
 
-
-
-## ChainerCV Contributors
-
-* Yusuke Niitani ([@yuyu2172](https://github.com/yuyu2172))
-* Toru Ogawa ([@hakuyume](https://github.com/hakuyume))
-* Shunta Saito ([@mitmul](https://github.com/mitmul))
-* Masaki Saito ([@rezoo](https://github.com/rezoo))
-* and more...
-
----
-
 ## Outline of the talk
 
 1. Easy-to-use Implementation
@@ -75,7 +73,7 @@ template: inverse
 
 ---
 
-## Using other people's implementation is hard
+## Using other people's research code is hard
 
 * Interface is not so clear (e.g. How to run with my data?)
 * Installation failure (e.g. Unmaintained Caffe)
@@ -87,8 +85,8 @@ template: inverse
 .below-60[.center[
 **ChainerCV aims at solving these issues**]]
 
-1. Easy installation (`pip`)
-2. Tested and documented like Chainer
+1. Easy installation (`pip install chainercv`)
+2. Well tested and documented like Chainer
 3. Unified interface (next slide)
 
 <!-- because their instructions are unclear -->
@@ -119,9 +117,7 @@ labels = model.predict(imgs)
 
 ---
 
-## `predict` for detection models
-
-
+## Inside of `predict` for detection models
 
 Internally, `predict` does ...
 1. Preprocess images (e.g. mean subtraction and resizing)
@@ -133,15 +129,20 @@ Internally, `predict` does ...
 
 ---
 
+class: split-40
+
 ## Potential applications
 
 #### As a building block for other networks
 
-For example, scene graph generation depends
-on object detection algorithms to localize objects in images.
++ Example: scene graph generation
+  + Algorithms depends on detection algorithms
+  + Research community focuses on how to use detection results
+  + Detection model can be black-box
 
 
-.center.img-75[![](images/scene_graph.png)]
+
+.center.img-50[![](images/scene_graph.png)]
 
 .small[Scene Graph Generation by Iterative Message Passing. Xu et.al., CVPR2017] 
 
@@ -153,7 +154,7 @@ template: inverse
 
 ---
 
-## Overview of training a neural network
+## Overview of training neural network
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -165,7 +166,7 @@ template: inverse
 
 ---
 
-## Overview of training neural networks
+## Overview of training neural network
 
 
 * `chainer.training` handles training utilities for general machine learning tasks.
@@ -190,7 +191,7 @@ img, bbox, label = dataset[34]
 ```
 
 
-List of supported datasets:
+#### List of supported datasets
 
 * PASCAL VOC
 * CUB-200
@@ -202,7 +203,7 @@ List of supported datasets:
 
 ---
 
-## Transform
+## Data Preprocessing: Transform
 
 A function that takes an image and annotations as inputs and applies a modification to the inputs
 
@@ -218,7 +219,7 @@ A function that takes an image and annotations as inputs and applies a modificat
 
 ---
 
-## TransformDataset
+## Data Preprocessing: TransformDataset
 
 * An utility to extend an existing dataset by applying a function.
 * This puts together datasets and transforms.
@@ -277,34 +278,6 @@ evaluator = chainercv.extension.DetectionVOCEvaluator(
 result = evaluator()
 ```
 
-
-<!--
-
-## `chainer.training.Extension` for evaluation
-
-```python
-# trainer is a chainer.training.Trainer object
-trainer.extend(
-    chainercv.extension.DetectionVOCEvaluator(iterator, detection_model),
-    trigger=(1, 'epoch'))
-```
-
-```python
-evaluator = chainercv.extension.DetectionVOCEvaluator(
-        iterator, detection_model)
-# `result` contains dictionary of evaluation results
-# ex:  result['main/map'] contains mAP
-result = evaluator()
-```
-
-Internally, the evaluator runs three operations:
-
-1. Iterate over the iterator to fetch data and make prediction.
-2. Pass iterables of predictions and ground truth to `eval_*`.
-3. Report results.
-
--->
-
 ---
 
 template: inverse
@@ -312,39 +285,6 @@ template: inverse
 # Efforts on Reproducible Research
 
 ---
-<!-- THIS SLIDED IS NOT REALLY NECESSARY
-
-## Visualization: Example Code
-
-```python
-from chainercv.datasets import VOCDetectionDataset
-from chainercv.datasets import voc_detection_label_names
-from chainercv.visualizations import vis_bbox
-import matplotlib.pyplot as plot
-
-*dataset = VOCDetectionDataset()
-*img0, bbox0, label0 = dataset[204]
-*img1, bbox1, label1 = dataset[700]
-
-fig = plot.figure()
-
-ax1 = fig.add_subplot(1, 2, 1)
-plot.axis('off')
-*vis_bbox(img0, bbox0, label0,
-*        label_names=voc_detection_label_names, ax=ax1)
-
-ax2 = fig.add_subplot(1, 2, 2)
-plot.axis('off')
-*vis_bbox(img1, bbox1, label1,
-*        label_names=voc_detection_label_names, ax=ax2)
-
-plot.show()
-
-```
-
--->
-
-
 
 ## Bad implementations *in the wild*
 
@@ -352,11 +292,6 @@ plot.show()
 - Undocumented changes from the original implementation.
 
 This is problemetic for developing and comparing new ideas to the existing ones.
-
-
-
-
-
 
 ---
 
