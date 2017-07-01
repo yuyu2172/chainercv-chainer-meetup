@@ -29,7 +29,7 @@ layout: false
 
 ---
 
-## ChainerCV Contributors
+## ChainerCV contributors
 
 * Yusuke Niitani ([@yuyu2172](https://github.com/yuyu2172))
 * Toru Ogawa ([@hakuyume](https://github.com/hakuyume))
@@ -39,7 +39,7 @@ layout: false
 
 ---
 
-## Why do we develop ChainerCV
+## Why we developed ChainerCV
 #### Make *running* and *training* deep-learning easier in CV
 
 <!--
@@ -67,19 +67,19 @@ template: inverse
 
 ## Using other people's research code is hard
 
-* Interface is not so clear (e.g. How to run with my data?)
-* Installation failure (e.g. Unmaintained Caffe)
+* Unclear API
+* Unmaintained software
 <!--* Different implementations have different conventions.-->
 <!--* Research code is dirty.-->
 
 --
 
 .below-60[.center[
-**ChainerCV aims at solving these issues**]]
+**ChainerCV is aimed at solving these issues**]]
 
 1. Easy installation (`pip install chainercv`)
 2. Well tested and documented like Chainer
-3. Unified interface (next slide)
+3. Unified interface for models (next slide)
 
 <!-- because their instructions are unclear -->
 
@@ -115,12 +115,12 @@ labels = model.predict(imgs)
 
 ---
 
-## Inside of `predict` for detection models
+## Inside `predict` for detection models
 
-Internally, `predict` does ...
-1. Preprocess images (e.g. mean subtraction and resizing)
-2. Forward images through network
-3. Post-processing outputs by removing overlapping boxes
+Internally, `predict` ...
+1. Preprocesses images
+2. Forwards images through network
+3. Post-processes outputs
 
 .center.img-75[![](images/predict_doc.png)]
 
@@ -134,11 +134,8 @@ class: split-40
 #### As a building block for other networks
 
 + Example: scene graph generation
-  + Algorithms depends on detection algorithms
-  + Research community focuses on "using" detection results
-  + Detection model can be black-box
-
-
+  + Using algorithms that depends on detection algorithms
+  + Allowing research community to treat detection as black-box
 
 .center.img-50[![](images/scene_graph.png)]
 
@@ -160,7 +157,7 @@ template: inverse
 - Failure to implement features in original paper
 
 
-#### When is this problemetic?
+#### When is this problematic?
 
 - Analyzing Error
 - Extending from the existing method
@@ -172,8 +169,8 @@ template: inverse
 
 ## ChainerCV for reproducible research
 
-- Reproduce scores on par with the original scores
-- Document changes made from the original implementation
+- Reproduce scores on par with original scores
+- Document changes made from original implementation
 
 
 #### Faster R-CNN
@@ -217,8 +214,8 @@ See also: [Debug TensorFlow Models with tfdbg (@Google Developers Blog)](https:/
 
 We have talked about the goals of ChainerCV and its solutions.
 
-- Convenient and unified interface to deep learning models like Faster R-CNN.
-- Support set of baseline implementations for researchers and engineers to extend with new ideas.
+- Convenient and unified interface to deep learning models like Faster R-CNN
+- Support a set of baseline implementations for researchers and engineers for extending it with new ideas.
 
 
 ---
