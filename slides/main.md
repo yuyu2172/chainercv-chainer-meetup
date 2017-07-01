@@ -88,13 +88,19 @@ template: inverse
 
 ## Unified interface for models
 
-
 #### Object instantiation
+```python
+FasterRCNNVGG16(pretrained_model='voc07')
+SSD300(pretrained_model='voc0712')
+```
+
+<!--
 ```python
 FasterRCNNVGG16(pretrained_model='voc07')
 SSD300(pretrained_model='voc0712')
 SegNet(pretrained_model='camvid')
 ```
+-->
 
 #### Prediction interface
 ```python
