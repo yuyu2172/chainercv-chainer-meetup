@@ -159,8 +159,8 @@ template: inverse
 
 #### When is this problematic?
 
-- Analyzing Error
-- Extending from the existing method
+- Analyzing error
+- Extending from current method
 
 .center.img-33[![a](tikz/circle.png)]
 
