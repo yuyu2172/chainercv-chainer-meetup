@@ -20,7 +20,8 @@ layout: false
 
 ## ChainerCV
 
-.center.img[![chainercv screenshot](images/screenshot.png)]
+<!--.center.img[![chainercv screenshot](images/screenshot.png)]-->
+.center.img-33[![chainercv logo](images/CV1-2.png)]
 
 * Add-on package for CV built on top of Chainer
 * Github page:  [https://github.com/chainer/chainercv](https://github.com/chainer/chainercv)
@@ -186,10 +187,167 @@ template: inverse
 |:--------------:|:---------------:|:--------------:|:----------:|
 | CamVid train | CamVid test | 46.3 mIoU | **47.2 mIoU**|
 
+---
 
+template: inverse
+
+# Tools for Training Networks
 
 ---
 
+## Overview of training neural network
+
+
+* `chainer.training` is for general machine learning tasks
+* More tools are needed for CV tasks
+
+<!-- Add a slide on how learning a machine software components -->
+
+.center.img[![a](images/software_comp.png)]
+
+---
+
+## Overview of training neural network
+
+
+* `chainer.training` is for general machine learning tasks
+* More tools are needed for CV tasks
+
+<!-- Add a slide on how learning a machine software components -->
+
+.center.img[![a](images/software_comp_thick.png)]
+
+---
+
+## Dataset loader
+
+Similar to dataset loaders in `chainer.datasets` (e.g. MNIST)
+
+```python
+from chainercv.datasets import VOCDetectionDataset
+
+*dataset = VOCDetectionDataset(split='trainval', year='2007')
+# Access 34th sample in the dataset
+img, bbox, label = dataset[34]
+```
+
+List of supported datasets:
+
+* PASCAL VOC
+* Cityscapes
+* CUB-200
+* CamVid
+* Online Products Dataset
+
+---
+
+## Transform
+
+Modifies an image or an annotation
+
+* `resize`
+* `scale`
+* `pca_lightning`
+* `random_expand` (see below)
+* etc...
+
+.center.img-50[![random_expand](images/mnist_random_expand.png)]
+
+---
+
+## TransformDataset
+
+* Extends existing dataset by applying function
+* Puts together datasets and transforms
+
+```python
+# `dataset` is a dataset for Detection task
+def flip_transform(in_data):
+    img, bbox, label = in_data
+    img, param = random_flip(img, x_flip=True, return_param=True)
+    bbox = flip_bbox(bbox, x_flip=param['x_flip'])
+    return img, bbox, label
+
+new_dataset = TransformDataset(dataset, flip_transform)
+```
+
+An example where an image is randomly flipped horizontally and bounding box coordinates
+are modified based on the flip.
+
+---
+
+## Visualization
+
+* Visualization for images and annotations
+  * Images
+  * Bounding boxes
+  * Segmentation labels
+  * Keypoints
+
+* Code is built on top of Matplotlib
+
+.img[![sample_visualization](images/vis_visualization.png)]
+
+---
+
+## Evaluation
+
+Evaluating by standard metric in computer vision
+
+* Semantic Segmentation: IoU
+* Object Detection: Average Precision
+
+#### Use as an extension
+
+```python
+# trainer is a chainer.training.Trainer object
+trainer.extend(
+    DetectionVOCEvaluator(iterator, detection_model)
+)
+```
+
+* The same interface as `Evaluator`
+
+<!-- 
+```python
+evaluator = chainercv.extension.DetectionVOCEvaluator(
+        iterator, detection_model)
+# `result` contains dictionary of evaluation results
+# ex:  result['main/map'] contains mAP
+result = evaluator()
+```
+
+-->
+
+---
+
+
+<!--
+
+## `chainer.training.Extension` for evaluation
+
+```python
+# trainer is a chainer.training.Trainer object
+trainer.extend(
+    chainercv.extension.DetectionVOCEvaluator(iterator, detection_model),
+    trigger=(1, 'epoch'))
+```
+
+```python
+evaluator = chainercv.extension.DetectionVOCEvaluator(
+        iterator, detection_model)
+# `result` contains dictionary of evaluation results
+# ex:  result['main/map'] contains mAP
+result = evaluator()
+```
+
+Internally, the evaluator runs three operations:
+
+1. Iterate over the iterator to fetch data and make prediction.
+2. Pass iterables of predictions and ground truth to `eval_*`.
+3. Report results.
+
+-->
 
 <!-- Add a demo if you want to at the first chapter
 
@@ -209,13 +367,49 @@ See also: [Debug TensorFlow Models with tfdbg (@Google Developers Blog)](https:/
 ]
 -->
 
+# Data convention: image
+
+* RGB
+* Shape is CHW
+* Range of value is [0, 255]
+
+
+.center.img[![rgb](images/color-channels-RGB.jpg)]
+
+---
+
+# Data convention: bounding box
+
+* Shape is (R, 4)
+* `(y_min, x_min, y_max, x_max)` ordered
+
+.center.img-60[![bbox](images/bbox.png)]
+
+```python
+bbox == np.array([[150, 100, 400, 600]])
+```
+
+---
+
+# Paper
+
+.center.img-80[![ariv](images/arxiv.png)]
+
+* Please cite when using ChainerCV
+* Accepted to ACMMM17 Open Source Software Competition
+
+---
+
 
 ## Conclusions
 
 We have talked about the goals of ChainerCV and its solutions.
 
-- Convenient and unified interface to deep learning models like Faster R-CNN
-- Support a set of baseline implementations for researchers and engineers for extending it with new ideas.
+- Convenient and unified interface to deep learning models
+- Baseline implementations for training 
+- Training utilities
+- Data conventions
+- Paper
 
 
 ---
