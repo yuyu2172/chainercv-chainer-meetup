@@ -6,14 +6,22 @@ layout: true
 
 class: titlepage, no-number
 
-# ChainerCV: Library for Deep Learning in Computer Vision
+# .x-large[ChainerCV: a Library for Deep Learning <br /> in Computer Vision]
 
-## .author[Yusuke Niitani (UTokyo)]
-### .small[.white[Jun 10th, 2017]]
+.below-60[
+## .medium[.author[<u>Yusuke Niitani</u>, Toru Ogawa, Shunta Saito, Masaki Saito ]]]
+
 <!-- <br/> .green[Initial Version: June 18th, 2016]]-->
 
-### .x-small[https://yuyu2172.github.io/chainercv-chainer-meetup]
+.below-55[
+.left-column40[
+.right.img-30[![tokyo logo](images/logo_tokyo.png)]]]
+.below-90[
+.right-column45[
+.left.img-60[![pfn logo](images/pfn_logo.png)]
+]]
 
+<!--### .x-small[https://yuyu2172.github.io/chainercv-chainer-meetup]-->
 
 ---
 layout: false
@@ -151,6 +159,21 @@ template: inverse
 
 ---
 
+# Training scripts in ChainerCV
+
+Training scripts
+
++ Faster R-CNN
++ SSD
++ SegNet
++ ImageNet with data augmentation (WIP)
+
+.center.img[![](images/examples_faster_rcnn.png)]
+
+
+
+---
+
 ## Bad implementations *in the wild*
 
 - Different datasets from original paper for eval/train
@@ -271,8 +294,13 @@ def flip_transform(in_data):
 new_dataset = TransformDataset(dataset, flip_transform)
 ```
 
+
+.center.img[![kit_fox](images/kit_fox.png)]
+
+<!--
 An example where an image is randomly flipped horizontally and bounding box coordinates
 are modified based on the flip.
+-->
 
 ---
 
