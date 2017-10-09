@@ -38,32 +38,38 @@ layout: false
 
 ---
 
-## ChainerCV contributors
+## Why we developed ChainerCV
 
-* Yusuke Niitani ([@yuyu2172](https://github.com/yuyu2172))
-* Toru Ogawa ([@hakuyume](https://github.com/hakuyume))
-* Shunta Saito ([@mitmul](https://github.com/mitmul))
-* Masaki Saito ([@rezoo](https://github.com/rezoo))
-* and more...
+.below-60[
+#### Make *running* and *training* deep-learning easier in CV
+]
+
+
+<!--
+.center.img-90[![](images/example_outputs_first_page_1.png)]
+-->
+
+
+.below-90[
+.left-column50[
+.center.img-100[![](images/detection.png)]
+]
+.right-column50[
+.center.img-100[![](images/segm.png)]
+]
+]
+
 
 ---
 
-## Why we developed ChainerCV
-#### Make *running* and *training* deep-learning easier in CV
+# Three Guiding Principles
 
-<!--
-* Network implementations and training scripts
-  * Object Detection (Faster R-CNN, SSD)
-  * Semantic Segmentation (SegNet)
-* Variety of tool sets 
-* Dataset Loader (e.g. PASCAL VOC) and data-augmentation tools
-* Visualization
-* Evaluation
--->
-
-<!--.center.img-33[![Right-algined text](images/faster_rcnn_image_000008.png)]-->
-
-.center.img-90[![](images/example_outputs_first_page_1.png)]
+.below-90[.medium[
+- **Easy-to-use**
+- **Reproduciblity**
+- **Compositionality**
+]
+]
 
 
 ---
@@ -76,21 +82,35 @@ template: inverse
 
 ## Using other people's research code is hard
 
+.left-column60[
+.below-90[
 * Unclear API
-* Unmaintained software
+* Uncommented lines of code
+* No installation guidelines
+    ]
+]
+.right-column40[
+.center.img-30[
+![](images/uncommented_code.png)]
+]
 <!--* Different implementations have different conventions.-->
 <!--* Research code is dirty.-->
 
---
 
-.below-60[.center[
-**ChainerCV is aimed at solving these issues**]]
+---
 
-1. Easy installation (`pip install chainercv`)
-2. Well tested and documented like Chainer
-3. Unified interface for models (next slide)
+
+
+
+## ChainerCV is easy-to-use
+
+* Easy installation (`pip install chainercv`)
+* Well tested and documented like Chainer
+* Unified interface for models (next slide)
 
 <!-- because their instructions are unclear -->
+
+.center.img-50[![](images/readthedoc.png)]
 
 ---
 

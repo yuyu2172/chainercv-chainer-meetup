@@ -46,13 +46,13 @@ h1, h2, h3 {
 }
 
 .x-large, .x-large * {
-  font-size: 42pt !important;
+  font-size: 32pt !important;
 }
 .large, .large * {
   font-size: 24pt !important;
 }
 .medium, .medium * {
-  font-size: 22pt !important;
+  font-size: 20pt !important;
 }
 .small, .small * {
   font-size: 15pt !important;
@@ -283,13 +283,20 @@ tr:nth-child(odd) td { background: #f2f2f2; }
       width: 50%;
       float: left;
 }
-
+.left-column60 {
+      width: 60%;
+      float: left;
+}
+.right-column40 {
+      width: 40%;
+      float: right;
+}
 .right-column45 {
       width: 45%;
       float: right;
 }
 .right-column50 {
-      width: 48%;
+      width: 50%;
       float: right;
 }
 .right-column70 {
