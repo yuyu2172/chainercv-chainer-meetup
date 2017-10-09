@@ -157,48 +157,15 @@ Internally, `predict` ...
 
 .center.img-75[![](images/predict_doc.png)]
 
-
----
-
-class: split-40
-
-## Potential applications
-
-#### As a building block for other networks
-
-+ Example: scene graph generation
-  + Using algorithms that depends on detection algorithms
-  + Allowing research community to treat detection as black-box
-
-.center.img-50[![](images/scene_graph.png)]
-
-.small[Scene Graph Generation by Iterative Message Passing. Xu et.al., CVPR2017] 
-
-
 ---
 
 template: inverse
 
-# Efforts on Reproducible Performance
+# Reproducibility
 
 ---
 
-# Training scripts in ChainerCV
-
-Training scripts
-
-+ Faster R-CNN
-+ SSD
-+ SegNet
-+ ImageNet with data augmentation (WIP)
-
-.center.img[![](images/examples_faster_rcnn.png)]
-
-
-
----
-
-## Bad implementations *in the wild*
+## Reproducibility failures
 
 - Different datasets from original paper for eval/train
 - Undocumented changes from original paper
@@ -217,15 +184,26 @@ Training scripts
 
 ## ChainerCV for reproducible research
 
+<!--
 - Reproduce scores on par with original scores
 - Document changes made from original implementation
+-->
 
+.below-60[
 
 #### Faster R-CNN
 
-| Training Setting | Evaluation | Reference | ChainerCV | pytorch |
+| Training Setting | Evaluation | Reference | ChainerCV |
 |:-:|:-:|:-:|:-:|
-| VOC 2007 trainval | VOC 2007 test|  69.9 mAP  | **70.5 mAP** | 66.1 mAP |
+| VOC 2007 trainval | VOC 2007 test|  69.9 mAP  | **70.5 mAP** |
+]
+
+
+#### SSD300
+
+| Training Setting | Evaluation | Reference | ChainerCV |
+|:-:|:-:|:-:|:-:|
+| VOC 2007 & 2012 trainval | VOC 2007 test|  77.5 mAP  | **77.5 mAP** |
 
 
 #### SegNet
