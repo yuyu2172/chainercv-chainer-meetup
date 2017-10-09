@@ -76,7 +76,7 @@ layout: false
 
 template: inverse
 
-# Easy-to-use Implementation
+# Easy-to-use
 
 ---
 
@@ -224,7 +224,7 @@ template: inverse
 
 template: inverse
 
-# Tools for Training Networks
+# Compositionality
 
 ---
 
