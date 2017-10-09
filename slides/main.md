@@ -137,10 +137,14 @@ SegNet(pretrained_model='camvid')
 bboxes, labels, scores = model.predict(imgs)
 ```
 
+<!--
 ```python
 # Semantic Segmentation models
 labels = model.predict(imgs)
 ```
+-->
+
+.center.img-80[![](images/detection_api.png)]
 
 ---
 
