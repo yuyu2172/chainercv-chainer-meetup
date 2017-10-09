@@ -150,12 +150,20 @@ labels = model.predict(imgs)
 
 ## Inside `predict` for detection models
 
-Internally, `predict` ...
+.below-60[
 1. Preprocesses images
 2. Forwards images through network
 3. Post-processes outputs
+]
 
+<!--
 .center.img-75[![](images/predict_doc.png)]
+-->
+.below-60[
+.center.img-100[![](images/inside_predict.png)]
+]
+
+
 
 
 ---
