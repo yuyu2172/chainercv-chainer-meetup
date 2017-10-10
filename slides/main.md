@@ -26,17 +26,6 @@ class: titlepage, no-number
 ---
 layout: false
 
-## ChainerCV
-
-<!--.center.img[![chainercv screenshot](images/screenshot.png)]-->
-.center.img-33[![chainercv logo](images/CV1-2.png)]
-
-* Add-on package for CV built on top of Chainer
-* Github page:  [https://github.com/chainer/chainercv](https://github.com/chainer/chainercv)
-* MIT License
-* Developed since late February 2017
-
----
 
 ## Why we developed ChainerCV
 
@@ -239,8 +228,14 @@ template: inverse
 
 <!-- Add a slide on how learning a machine software components -->
 
+<!--
 .below-60[
 .center.img[![a](images/software_comp.png)]
+]
+-->
+
+.below-20[
+.center.img-75[![a](images/overview_util.png)]
 ]
 
 ---
