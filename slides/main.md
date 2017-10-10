@@ -133,7 +133,7 @@ labels = model.predict(imgs)
 ```
 -->
 
-.center.img-80[![](images/detection_api.png)]
+.center.img-60[![](images/detection_api.png)]
 
 ---
 
