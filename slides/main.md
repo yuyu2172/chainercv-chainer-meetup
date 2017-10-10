@@ -295,7 +295,27 @@ class: center, middle, no-number
 
 ---
 
-## Comparison with other frameworks
+## Comparison with other frameworks (1)
+
+Object Detection API from TensorFlow:
+
+- User friendliness
+  - Requires users to download weights by themselves
+  - Requires several lines of code to run inference from a NumPy image
+- Comprehensiveness
+  - Computer vision tasks are supported independently in different repositories
+  - No coherent design principle
+
+
+---
+
+## Comparison with other frameworks (2)
+
+`pytorch/vision` from PyTorch
+
+- Comprehensiveness
+  - Only classification models are supported
+- No evaluation scripts
 
 ---
 
