@@ -41,12 +41,18 @@ layout: false
 
 .below-90[
 .left-column50[
-.center.img-100[![](images/detection.png)]
+Supported tasks
+- Object detection
+- Semantic segmentation
+- Image classification
+
 ]
 .right-column50[
+.center.img-100[![](images/detection.png)]
 .center.img-100[![](images/segm.png)]
 ]
 ]
+
 
 
 ---
@@ -169,7 +175,10 @@ template: inverse
 
 
 .below-60[
-.center.img[![a](images/devils_in_detail.jpg)]]
+.center.img-90[![a](images/devils_in_detail.jpg)]]
+
+
+[comment]:  (Original image from the following link. I added text. https://www.flickr.com/photos/amelien/26643253432/in/photolist-GAnD1u-Wgma5S-61NZ9W-eJbya1-HKvYhv-eE5Qs7-r9PW4k-NFcNb-VuDFJN-dehD6U-qi5b7y-A1os3-SKkWF8-9wD9Uf-eaYbJc-4kRd5n-5Dbf8n-8fCZTg-mzN7H-czDtGo-4ejiyx-JSddy-ev3aUp-UHENRo-hdcJ5n-o5CDHK-nQoD-X2GPoz-5JkD5T-5RuRbA-EBGxGZ-VNBai3-8y2JSW-eRMooE-81t36-VYsY7a-3dTbSr-eJjimF-dvsyW2-6fL73J-8wQnsS-SRcLK8-bKj2t4-LTayWC-8CzkXC-6eDkqm-9gPZva-n7FyDt-hxd6xE-7MKtWv)
 
 ---
 
@@ -252,7 +261,6 @@ template: inverse
 
 ---
 
-
 ## Conclusions
 
 .below-60[
@@ -263,6 +271,7 @@ ChainerCV ...
 - contains tools and implementations that are **compositional**
 
 .center.img-33[![chainercv logo](images/CV1-2.png)]
+.center[Install by  `pip install chainercv`]
 
 
 ---
@@ -270,5 +279,52 @@ name: last-page
 class: center, middle, no-number
 
 
+---
+
+## Future works
+
+- Expand tasks
+    - Instance segmentation (WIP)
+    - Image captioning
+    - Scene graph generation
+
+- Different training schemes
+    - Weakly supervised learning
+    - Few-shot learning
+
+
+---
+
+## Comparison with other frameworks
+
+---
+
+## List of supported data loaders
+
+- Semantic Segmenetation Dataset
+    - ADE20K
+    - CamVid
+    - Cityscapes
+    - VOC (segmentation)
+- Object Detection
+    - VOC (bbox)
+- Classification
+    - CUB
+    - Online Products
+
+---
+
+## List of models
+
+- Object detection
+    - Faster R-CNN (VOC07 and VOC0712 training)
+    - SSD300
+    - SSD512
+- Semantic segmentation
+    - SegNet
+- Classification
+    - VGG16
+
+---
 
 <!-- vim: set ft=pandoc -->
