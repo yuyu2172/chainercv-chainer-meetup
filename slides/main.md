@@ -252,7 +252,7 @@ template: inverse
 ChainerCV ...
 ]
 - provides **easy-to-use** implementations of sophisticated networks like SSD
-- faithfully **reproduced** training procedure from the original paper 
+- faithfully **reproduced** training procedure from the original papers
 - contains tools and implementations that are **compositional**
 
 .center.img-33[![chainercv logo](images/CV1-2.png)]
