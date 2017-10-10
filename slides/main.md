@@ -166,15 +166,22 @@ template: inverse
 
 - Different datasets from original paper for eval/train
 - Undocumented changes from original paper
-- Failure to implement features in original paper
 
 
-#### When is this problematic?
+.below-60[
+.center.img[![a](images/devils_in_detail.jpg)]]
+
+---
+
+
+## Why reproducibility is important
 
 - Analyzing error
 - Extending from current method
 
-.center.img-33[![a](tikz/circle.png)]
+.below-60[
+.center.img-60[![a](tikz/circle.png)]
+]
 
 
 ---
