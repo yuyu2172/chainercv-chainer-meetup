@@ -60,7 +60,7 @@ Supported tasks
 # Three guiding principles
 
 .below-90[.medium[
-- **Easy-to-use**
+- **Ease of use**
 - **Reproduciblity**
 - **Compositionality**
 ]
@@ -71,7 +71,7 @@ Supported tasks
 
 template: inverse
 
-# Easy-to-use
+# Ease of use
 
 ---
 
